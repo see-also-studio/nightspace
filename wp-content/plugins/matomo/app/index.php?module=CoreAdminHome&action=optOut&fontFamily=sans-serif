@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        
+                <style>
+                        body { font-family: sans-serif; }
+                    </style>
+    </head>
+<body>
+        
+        <p id="textOptIn" style=" display:none">
+        Opt-out complete; your visits to this website will not be recorded by the Web Analytics tool.
+
+        Note that if you clear your cookies, delete the opt-out cookie, or if you change computers or Web browsers, you will need to perform the opt-out procedure again.
+        </p>
+        <p id="textOptOut" >
+            You may choose to prevent this website from aggregating and analyzing the actions you take here. Doing so will protect your privacy, but will also prevent the owner from learning from your actions and creating a better experience for you and other users.
+        </p>
+
+        <p id="textError_cookies" style="display:none; color: red; font-weight: bold;" %}>
+            The tracking opt-out feature requires cookies to be enabled.
+        </p>
+        <p id="textError_https" style="display:none; color: red; font-weight: bold;" %}>
+            The tracking opt-out feature may not work because this site was not loaded over HTTPS. Please reload the page to check if your opt out status changed.
+        </p>
+        <p id="textError_popupBlocker" style="display:none; color: red; font-weight: bold;" %}>
+            The tracking Opt-out feature may not work because it looks like the opt out popup was blocked. Please reload the page to check if your opt out status changed.
+        </p>
+
+    
+        <form method="post" action="?module=CoreAdminHome&action=optOut&language=en&setCookieInNewWindow=1&nonce=884a2090e36f031e15c668f1a2071025" target="_blank">
+        <input type="hidden" name="nonce" value="884a2090e36f031e15c668f1a2071025" />
+        <input type="hidden" name="fuzz" value="October 30, 2020 05:37" />
+        <input onclick="submitForm(event, this.form);" type="checkbox" id="trackVisits" name="trackVisits" checked="checked" />
+        <label for="trackVisits"><strong>
+                <span id="labelOptOut" >
+                    You are not opted out. Uncheck this box to opt-out.
+                </span>
+
+                <span id="labelOptIn"  style="display:none;">
+                    You are currently opted out. Check this box to opt-in.
+                </span>
+        </strong></label>
+        <noscript>
+            <button type="submit">Save</button>
+        </noscript>
+    </form>
+    
+            <script type="text/javascript" src="plugins/CoreAdminHome/javascripts/optOut.js?cb=8675acaa52c59fd34e02c9b0d0b4b445"></script>
+    </body>
+</html>

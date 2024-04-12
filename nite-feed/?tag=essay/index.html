@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<script>
+    if (localStorage.getItem('dark-mode') == null) {
+        localStorage.setItem('dark-mode', window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+    if (localStorage.getItem('dark-mode') == 'true') {
+        document.getElementsByTagName('html')[0].classList.add('is-dark-mode');
+    }
+    if (sessionStorage.getItem("toggle-images") == "true") {
+        document.getElementsByTagName("html")[0].classList.add("toggle-images");
+    }
+    function getUrlValue(varSearch) {
+        var searchString = window.location.search.substring(1);
+        var variableArray = searchString.split('&');
+        for(var i = 0; i < variableArray.length; i++){
+            var keyValuePair = variableArray[i].split('=');
+            if(keyValuePair[0] == varSearch){
+                return keyValuePair[1];
+            }
+        }
+    }
+    var tag = getUrlValue("tag");
+    if(tag) {
+        document.getElementsByTagName("html")[0].setAttribute("data-filter", tag);
+    } else {
+        document.getElementsByTagName("html")[0].setAttribute("data-filter", "all");
+    }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/wp-content/themes/nite/assets/img/favicon.svg" type="image/x-icon">
+<link rel="mask-icon" href="/wp-content/themes/nite/assets/img/favicon.svg" color="#323232">
+<title>Newsfeed | Night spaces</title>
+<meta name="description" content="migration, culture and integration in Europe" />
+<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='ctf_styles-css'  href='/wp-content/plugins/custom-twitter-feeds/css/ctf-styles.min.css?ver=1.6' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css'  href='/wp-content/themes/nite/assets/css/normalize.min.css?ver=5.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='nite-style-css'  href='/wp-content/themes/nite/style.min.css?ver=1.11' type='text/css' media='all' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp-content/themes/nite/assets/js/interact.min.js?ver=5.5.3' id='interactjs-js'></script>
+<script type='text/javascript' src='/wp-content/themes/nite/assets/js/scripts.min.js?ver=1.11' id='nite-scripts-js'></script>
+<link rel="https://api.w.org/" href="/wp-json/" /></head>
+<body class="blog">
+<header id="header" aria-label="header">
+    <div id="logo">
+        <a href="/" title="Night spaces" rel="home">
+            <svg version="1.1" id="nite-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1012 344">
+    <title>NITE logo</title>
+    <style type="text/css">
+        .logo-fill {
+            fill: #000000;
+            fill: var(--foreground);
+        }
+    </style>
+    <g class="logo-fill">
+        <rect width="20" height="344"/>
+        <rect x="224" width="20" height="344"/>
+        <rect x="388" width="20" height="344"/>
+        <rect x="590" y="38" width="20" height="306"/>
+        <rect x="788" width="20" height="344"/>
+        <polygon points="232,268 20,0 12,76 224,344 "/>
+        <rect x="470" width="258" height="46"/>
+        <polygon points="1012,0 808,0 800,46 1012,46 "/>
+        <rect x="800" y="146" width="204" height="46"/>
+        <polygon points="1012,298 800,298 808,344 1012,344 "/>
+    </g>
+</svg>        </a>
+    </div>
+
+    <button id="menu-button-toggle" aria-controls="menu-container" aria-expanded="false" aria-label="Main menu button">
+        <span class="menu-button-text">Menu</span>
+    </button>
+    <div id="menu-container" aria-label="Main menu" style="display: none;">
+        <span class="header-project-description">Night spaces: migration, culture and integration in Europe</span>
+        <nav id="menu" aria-label="Menu navigation">
+            <div class="menu-top-navigation-container"><ul id="menu-top-navigation" class="menu"><li id="menu-item-486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-486"><a href="/#projects">Projects</a></li>
+<li id="menu-item-30" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="/information/">Information</a></li>
+<li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-109 current_page_item current_page_parent menu-item-111"><a href="/nite-feed/" aria-current="page">Newsfeed</a></li>
+</ul></div>            <!-- Begin Mailchimp Signup Form -->
+            <span class="menu-newsletter">
+                <form action="https://nightspace.us4.list-manage.com/subscribe/post?u=bba449799d8782d7918b13245&amp;id=48255f3c34" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <label for="mce-EMAIL"><a class="mobile-only-active" href="https://nightspace.us4.list-manage.com/subscribe/post?u=bba449799d8782d7918b13245&id=48255f3c34" target="_blank"><span class="mobile-only-visible">Subscribe to </span>Newsletter </a></label>
+                    <span class="d-inline-block mobile-only-hidden">
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                        <button type="submit" name="subscribe">Subscribe <span class="return-icon">&#8617;&#xFE0E;</span></button>
+                    </span>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bba449799d8782d7918b13245_48255f3c34" tabindex="-1" value=""></div>
+                </form>
+            </span>
+            <!--End mc_embed_signup-->
+        </nav>
+        <div id="menu-social" aria-label="social-media">
+                    <a class="link-social" href="https://www.facebook.com/HERA-Humanities-in-the-European-Research-Area-799465540064666/" rel="noopener noreferrer" target="_blank" aria-label="nightspace facebook page">Facebook</a>
+                    <a class="link-social" href="https://twitter.com/NITE_HERA" rel="noopener noreferrer" target="_blank" aria-label="nightspace twitter page">Twitter</a>
+                </div>
+        <div id="menu-moon" aria-label="live moon phase">
+            <div id="moon-container">
+                <div id="moon-phase"></div>
+                <div id="moon-visual"></div>
+                <div id="moon-date" aria-label></div>
+            </div>
+        </div>
+        <div id="menu-darkmode" aria-label="switch between dark and light mode">
+            <button id="menu-button-darkmode"><span class="toggle-darkmode">Dark mode</span><span class="toggle-lightmode">Light mode</span></button>
+        </div>
+    </div>
+    
+    <div id="menu-subheading">
+        <span class="subheading-pagetype">Feed</span>
+        <span class="subheading-dynamic">Tags: <a href="/nite-feed/" title="all" class="feed-filter-tag all" data-tag="all">All</a><a href="/nite-feed/?tag=essay" title="Essay" class="feed-filter-tag essay" data-tag="essay">Essay</a><a href="/nite-feed/?tag=event" title="Event" class="feed-filter-tag event" data-tag="event">Event</a><a href="/nite-feed/?tag=media" title="Media" class="feed-filter-tag media" data-tag="media">Media</a><a href="/nite-feed/?tag=news" title="News" class="feed-filter-tag news" data-tag="news">News</a></span>
+    </div>
+    <span id="menu-button-bg"></span>
+</header>
+<div id="wrapper" class="hfeed">
+<main id="content" class="no-column-layout">
+        <div id="post-1219" class="post-1219 post type-post status-publish format-standard has-post-thumbnail hentry category-migrant-bike-couriers-in-smart-city-at-night tag-event">
+    <a class="blog-content-inner" href="/migrant-bike-couriers-in-smart-city-at-night/berlin-conference/" title="Call for Proposals &#8211; Augmented Cities Conference" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Bannervisual-Augmented-Cities.png" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="964" 
+                    height="814" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Event</span>
+            <h2 class="entry-title">Call for Proposals &#8211; Augmented Cities Conference</h2>
+                            <address class="post-event-address"></address>
+                        </div>
+    </a>
+</div>        <div id="post-1199" class="post-1199 post type-post status-publish format-standard has-post-thumbnail hentry category-night-and-belonging-lisbon-aarhus tag-essay">
+    <a class="blog-content-inner" href="/night-and-belonging-lisbon-aarhus/cover-the-fire-or-live-in-the-dusk/" title="“Cover the Fire” or Live in the Dusk" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Picture-1.png" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="854" 
+                    height="660" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Essay</span>
+            <h2 class="entry-title">“Cover the Fire” or Live in the Dusk</h2>
+                                    <span class="post-author">Derek Pardue</span><br>
+                            </div>
+    </a>
+</div>        <div id="post-1166" class="post-1166 post type-post status-publish format-standard has-post-thumbnail hentry category-migrant-lgbtq-communities-nightspaces-london tag-media">
+    <a class="blog-content-inner" href="/migrant-lgbtq-communities-nightspaces-london/nightclubs-architecture-and-urbanism/" title="Nightclubs, architecture and urbanism" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Screenshot-2020-10-30-at-14.25.53.png" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="1093" 
+                    height="744" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Media</span>
+            <h2 class="entry-title">Nightclubs, architecture and urbanism</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-1153" class="post-1153 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-news">
+    <a class="blog-content-inner" href="/uncategorised/night-clubbing-bartlett-international-lecture-series/" title="Night Clubbing &#8211; Bartlett International Lecture Series" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/8x5zb6053_283165_023.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="768" 
+                    height="480" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">News</span>
+            <h2 class="entry-title">Night Clubbing &#8211; Bartlett International Lecture Series</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-1129" class="post-1129 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-news">
+    <a class="blog-content-inner" href="/uncategorised/cfp-night-stories-urban-narratives-of-migrant-lives-in-europe/" title="CfP &#8216;Night Stories: Urban Narratives of Migrant Lives in Europe&#8217;" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/HipstamaticPhoto-600849002.229629-2-scaled.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="2560" 
+                    height="2560" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">News</span>
+            <h2 class="entry-title">CfP &#8216;Night Stories: Urban Narratives of Migrant Lives in Europe&#8217;</h2>
+                    </div>
+    </a>
+</div>        <div id="post-1099" class="post-1099 post type-post status-publish format-standard has-post-thumbnail hentry category-migrant-lgbtq-communities-nightspaces-london tag-media">
+    <a class="blog-content-inner" href="/migrant-lgbtq-communities-nightspaces-london/amy-lame-interview-with-ben-campkin/" title="Amy Lamé interview, with Ben Campkin" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/amy_lame.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="490" 
+                    height="245" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Media</span>
+            <h2 class="entry-title">Amy Lamé interview, with Ben Campkin</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-1018" class="post-1018 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-media">
+    <a class="blog-content-inner" href="/uncategorised/night-modes/" title="NIGHT MODES" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Website-thumbnail-scaled.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="2560" 
+                    height="1440" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Media</span>
+            <h2 class="entry-title">NIGHT MODES</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-1009" class="post-1009 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-media">
+    <a class="blog-content-inner" href="/uncategorised/night-scenes-roundtables/" title="NIGHT SCENES ROUNDTABLES" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Website-thumbnail3-1-scaled.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="2560" 
+                    height="1440" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Media</span>
+            <h2 class="entry-title">NIGHT SCENES ROUNDTABLES</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-1012" class="post-1012 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-media">
+    <a class="blog-content-inner" href="/uncategorised/night-times/" title="NIGHT TIMES" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Website-thumbnail2-scaled.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="2560" 
+                    height="1440" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Media</span>
+            <h2 class="entry-title">NIGHT TIMES</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-1000" class="post-1000 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-media">
+    <a class="blog-content-inner" href="/uncategorised/soho-scenes/" title="SOHO SCENES" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Website-thumbnail4-scaled.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="2560" 
+                    height="1440" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Media</span>
+            <h2 class="entry-title">SOHO SCENES</h2>
+                        <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div>        <div id="post-966" class="post-966 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorised tag-event">
+    <a class="blog-content-inner" href="/uncategorised/night-scenes-30-april-15-may-2020/" title="Night Scenes, 30 April &#8211; 15 May 2020" rel="bookmark">
+                    <div class="feed-list-featured-image-wrapper content-col-left">
+
+                                <img src="/wp-content/uploads/Chadine-and-Dan_Soho-Scenes.jpg" 
+                    sizes="(max-width: 440px) 91vw,
+                            (max-width: 700px) 24vw, 
+                            (max-width: 1599px) 12vw, 
+                            180px" 
+                    width="800" 
+                    height="500" 
+                    alt="">
+
+            </div>
+                <div class="feed-list-post-text-wrapper">
+            <span class="post-tag">Event</span>
+            <h2 class="entry-title">Night Scenes, 30 April &#8211; 15 May 2020</h2>
+                            <address class="post-event-address"></address>
+                            <span class="post-institution">UCL</span><br>
+                    </div>
+    </a>
+</div></main>
+</div>
+<footer id="footer" aria-label="footer">
+    <div id="copyright">
+        &copy; 2021 NITE <a href="/privacy/" aria-label="Privacy policy page">Privacy Policy</a> <a href="/accessibility/" aria-label="accessibility statement page">Accessibility Statement</a>
+    </div>
+</footer>
+</body>
+</html>
